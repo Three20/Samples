@@ -14,3 +14,7 @@ The TabBarViewController is the root view controller, and each page is a PageVie
 
 The purpose of this app is to show how to hide the edit button when there are more than 5
 pages on the tab bar.
+
+On iOS 4.0 devices only, there is a bug in the SDK that causes the edit button to still be shown
+after declaring that it shouldn't be. This sample project shows how to detect that the devices
+is running one of these buggy versions of iOS, and then how to fix the problem.
