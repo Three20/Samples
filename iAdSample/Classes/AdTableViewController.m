@@ -44,6 +44,8 @@ static const NSTimeInterval kBannerSlideInAnimationDuration = 0.4;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)viewDidLoad {
+  [super viewDidLoad];
+
   _adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
 
   _adView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
@@ -54,14 +56,38 @@ static const NSTimeInterval kBannerSlideInAnimationDuration = 0.4;
                                             nil];
   _adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
 
-  // Set initial frame to be offscreen, at the bottom
-  CGRect bannerFrame = _adView.frame;
-  bannerFrame.origin.y = self.view.height;
-  _adView.frame = bannerFrame;
-
   _adView.delegate = self;
 
+  // Set initial frame to be offscreen, at the bottom
+  _adView.top = self.view.bottom;
+
   [self.view addSubview:_adView];
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)viewDidUnload {
+  [super viewDidUnload];
+
+  _adView.delegate = nil;
+  TT_RELEASE_SAFELY(_adView);
+
+  _bannerIsVisible = NO;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)updateViewFramesWithOrientation:(UIInterfaceOrientation)orientation {
+  if (UIInterfaceOrientationIsLandscape(orientation)) {
+    _adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier480x32;
+
+  } else {
+    _adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+  }
+
+  CGRect tableFrame = self.tableView.frame;
+  tableFrame.size.height = self.view.height - (_bannerIsVisible ? _adView.height : 0);
+  self.tableView.frame = tableFrame;
 }
 
 
@@ -69,37 +95,20 @@ static const NSTimeInterval kBannerSlideInAnimationDuration = 0.4;
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
 
-  UIInterfaceOrientation orientation = self.interfaceOrientation;
-  if (UIInterfaceOrientationIsLandscape(orientation)) {
-    _adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier480x32;
-
-  } else {
-    _adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
-  }
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-  return YES;
+  [self updateViewFramesWithOrientation:self.interfaceOrientation];
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)willRotateToInterfaceOrientation: (UIInterfaceOrientation)toInterfaceOrientation
                                 duration: (NSTimeInterval)duration {
-  if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-    _adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier480x32;
+  [self updateViewFramesWithOrientation:toInterfaceOrientation];
+}
 
-  } else {
-    _adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
-  }
 
-  if (_bannerIsVisible) {
-    CGRect tableFrame = self.tableView.frame;
-    tableFrame.size.height = self.view.height - _adView.height;
-    self.tableView.frame = tableFrame;
-  }
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+  return YES;
 }
 
 
