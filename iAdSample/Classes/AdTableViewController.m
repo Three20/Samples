@@ -86,7 +86,6 @@ static const NSTimeInterval kBannerSlideInAnimationDuration = 0.4;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Handle interface orientations by moving it manually - there's probably a better way :)
 - (void)willRotateToInterfaceOrientation: (UIInterfaceOrientation)toInterfaceOrientation
                                 duration: (NSTimeInterval)duration {
   if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
