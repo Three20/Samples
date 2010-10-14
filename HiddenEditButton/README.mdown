@@ -1,0 +1,16 @@
+
+Hidden Edit Button
+==================
+
+Sample project for [the corresponding article](http://new.three20.info/article/2010-10-07-Remove-The-Edit-Button-From-The-More-Tab)
+found on Three20.info.
+
+
+Overview
+--------
+
+AppDelegate sets up the navigation scheme for a tab-bar-based application.
+The TabBarViewController is the root view controller, and each page is a PageViewController.
+
+The purpose of this app is to show how to hide the edit button when there are more than 5
+pages on the tab bar.
