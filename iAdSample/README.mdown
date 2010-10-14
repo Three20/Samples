@@ -1,0 +1,16 @@
+
+iAd Sample Project
+==================
+
+Sample project for [the corresponding article](http://new.three20.info/article/2010-10-14-iAd-Table-View-Controllers)
+found on Three20.info.
+
+
+Overview
+--------
+
+AppDelegate sets up the navigation scheme for a single table view controller.
+
+The root table view controller simply contains a list of items that link to the same table view
+controller. The table view controller will fetch and display ads at the bottom of the screen and
+handle orientation changes correctly.

@@ -389,6 +389,7 @@
 		6675F5D5126768EA00355C3F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../three20/samples/Resources/Default.png; sourceTree = SOURCE_ROOT; };
 		6675F5D6126768EA00355C3F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../three20/samples/Resources/Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		6675F5D7126768EA00355C3F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../three20/samples/Resources/Icon.png; sourceTree = SOURCE_ROOT; };
+		6675F5E21267693A00355C3F /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		6E3796A111B9BD630011C497 /* Three20Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Core.xcodeproj; path = ../../three20/src/Three20Core/Three20Core.xcodeproj; sourceTree = SOURCE_ROOT; };
 		6E3796A411B9BD630011C497 /* Three20Network.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Network.xcodeproj; path = ../../three20/src/Three20Network/Three20Network.xcodeproj; sourceTree = SOURCE_ROOT; };
 		6E3796A711B9BD630011C497 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -445,6 +446,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				6675F5E21267693A00355C3F /* README.mdown */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -1081,6 +1083,7 @@
 				);
 				PRODUCT_NAME = iAdSample;
 				SDKROOT = iphoneos4.1;
+				SYMROOT = ../build;
 			};
 			name = Debug;
 		};
@@ -1100,6 +1103,7 @@
 				);
 				PRODUCT_NAME = iAdSample;
 				SDKROOT = iphoneos4.1;
+				SYMROOT = ../build;
 			};
 			name = Release;
 		};
