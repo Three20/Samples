@@ -1,0 +1,28 @@
+Three20 Samples
+===============
+
+This is a growing set of sample code contributed by the community
+and the core Three20 team. Each sample project contains its own
+README.mdown with a project overview describing the purpose of
+the project and where to look for interesting source code.
+
+Installing the Samples
+----------------------
+
+Using git, run the following commands somewhere on your computer:
+
+    git clone git://github.com/Three20/Samples.git
+    git://github.com/facebook/three20.git
+
+You can now open up any of the sample projects within the Samples/
+directory and build and run them.
+
+Xcode support
+-------------
+
+Some projects have extra targets for different versions of Xcode. If
+you are running Xcode 3.2.4 (the current latest public build), you
+shouldn't have to worry about this. If you're running Xcode 3.2.5,
+however, there might be a target that you can choose with the
+-Xcode3.2.5 suffix. This will simplify the build process for you.
+
