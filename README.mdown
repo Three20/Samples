@@ -12,7 +12,7 @@ Installing the Samples
 Using git, run the following commands somewhere on your computer:
 
     git clone git://github.com/Three20/Samples.git
-    git://github.com/facebook/three20.git
+    git clone git://github.com/facebook/three20.git
 
 You can now open up any of the sample projects within the Samples/
 directory and build and run them.
