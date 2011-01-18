@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'MultiRecepients' target in the 'MultiRecipients' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif

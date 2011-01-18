@@ -1,0 +1,11 @@
+Multiple Recipients in TTMessageController
+==================
+
+Sample project for [the corresponding article]()
+found on Three20.info.
+
+
+Overview
+--------
+
+The purpose of this app is to show how to have and handle multiple Recipients in TTMessageController.
