@@ -1,0 +1,11 @@
+
+XML-RPC Sample Project
+==================
+
+Sample project for extThree20XMLRPC
+
+
+Overview
+--------
+
+This sample application uses [Hatena Similar words API](http://bit.ly/hatenaSimilarWord).
